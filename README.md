@@ -14,10 +14,17 @@ Two requiremnt should be implemented at the function node :<br/>
  - generate the return value;<br/>
 
 ## To get the cargo token :
-  Now the cargo token is stored in the authTokens in the master authToken.<br/>
-  In this flow, just get the another value of the authToken object only if the value of this object's "master" key is "master";
+Now the cargo token is stored in the authTokens in the master authToken.[@misysboard documentation](https://almtools/confluence/display/FAB/Authorizations)<br/>
+```
+	{
+		"master":"master",
+		"key name":"cargo token here"
+	}
+```
+In this flow, we can get the cargo token if the value of this object's "master" key is "master";
 
-Attention:the logic can be changed if the structure of authToken object changes
+Attention:the logic can be changed if the structure of authToken object changes.OR , if when you setup the enviroment, you set a fixed key for cargo token. You can change the function getTokenFromMasterTokenObj() in the function node.
+
 ## For the reutn value:<br/>
   The return value should be placed at msg.payload. <br/>
   two parameters :<br/>
